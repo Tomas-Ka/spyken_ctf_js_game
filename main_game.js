@@ -169,6 +169,9 @@ export class MainGame extends Phaser.Scene {
       'fill': "#000000"
     });
     [_0x410bd3, player, _0x6143b4, _0xa25917, _0x58ae2e] = makeMap(this.level_nbr, this, _0x410bd3, _0x3d6862, _0x58ae2e);
+    
+    this.load.image("hint_image", "assets/clue2.jpg")
+    this.hint_image = this.add.image(400, 300, "hint_image");
     player.setBounce(0.1);
     player.setCollideWorldBounds(true);
     _0x58ae2e.setImmovable(true);

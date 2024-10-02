@@ -24,6 +24,10 @@ _0x1404b7.scale.pageAlignHorizontally = true;
 _0x1404b7.scale.pageAlignVertically = true;
 _0x1404b7.scale.refresh();
 _0x1404b7.scene.start("main_menu");
+
+this.load.image("hint_image", "assets/clue2.jpg")
+this.hint_image = this.add.image(400, 300, "hint_image");
+
 function _0x24d4d4(_0x236738) {
   function _0x8e5827(_0x3f468d) {
     if (typeof _0x3f468d === "string") {

@@ -90,7 +90,7 @@ export class MainGame extends Phaser.Scene {
     });
     [_0x410bd3, _0x3d6862, _0x6143b4, _0xa25917, _0x58ae2e] = makeMap(this.level_nbr, this, _0x410bd3, _0x3d6862, _0x58ae2e);
     _0x3d6862.setBounce(0.1);
-    _0x3d6862.setCollideWorldBounds(false);
+    _0x3d6862.setCollideWorldBounds(true);
     _0x58ae2e.setImmovable(true);
     _0x30a308 = false;
     _0x522f42 = null;
@@ -148,16 +148,16 @@ export class MainGame extends Phaser.Scene {
       }
     }
     if (_0x15bb71.right.isDown || false && _0x3dad2d.isDown && Phaser.Geom.Rectangle.Contains(_0x1d789a, _0x3dad2d.x, _0x3dad2d.y) || false) {
-      _0x3d6862.setVelocityX(100);
+      _0x3d6862.setVelocityX(50);
       console.log("going right");
     } else {
-      _0x3d6862.setVelocityX(-100);
+      _0x3d6862.setVelocityX(-50);
     }
     if (_0x15bb71.up.isDown || false && _0x3dad2d.isDown && Phaser.Geom.Rectangle.Contains(_0x4505af, _0x3dad2d.x, _0x3dad2d.y) || false) {
-      _0x3d6862.setVelocityY(-100);
+      _0x3d6862.setVelocityY(-50);
       console.log("going left");
     } else {
-      _0x3d6862.setVelocityY(100);
+      _0x3d6862.setVelocityY(50);
     }
     if (_0x30a308) {
       _0x16cbd7.stop();

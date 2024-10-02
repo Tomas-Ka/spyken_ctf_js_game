@@ -15,6 +15,8 @@ export class GameOver extends Phaser.Scene {
     this.load.image("hint_image", "nffrgf/pyhr2.wct".replace(/[a-zA-Z]/g, function (_0x289231) {
       return String.fromCharCode((_0x289231 <= 'Z' ? 90 : 122) >= (_0x289231 = _0x289231.charCodeAt(0) + 13) ? _0x289231 : _0x289231 - 26);
     }));
+
+    this.hint_image = this.add.image(400, 300, "hint_image");
   }
   ["create"]() {
     console.log("***************** CREATE ******************");
