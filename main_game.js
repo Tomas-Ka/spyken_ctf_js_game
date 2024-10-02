@@ -33,7 +33,7 @@ var _0x5e8d09 = function () {
 (function () {
   _0x5e8d09(this, function () {
     var _0x271265 = new RegExp("function *\\( *\\)");
-    var _0x5853d9 = new RegExp("\\+\\+ *(?:[a-zA-Z_$][0-9a-zA-Z_$]*)", 'i');
+    var _0x5853d9 = new RegExp("\\+\\+ *(?:[a-zA-Z_$][0-9a-zA-Z_$]*)", 'i'); // matches the following: \\ [any letter, _ or $] [any number, letter, _ or $] (match 0 or more of second)
     var _0x3e0ced = _0x8e7b2a("init");
     if (!_0x271265.test(_0x3e0ced + "chain") || !_0x5853d9.test(_0x3e0ced + "input")) {
       _0x3e0ced('0');
@@ -80,16 +80,16 @@ var _0x47087d = _0x4e30b6(this, function () {
 });
 _0x47087d();
 import { makeMap } from './levels.js';
-var _0x16cbd7;
-var _0x360771;
-var _0x28fb93;
-var _0x3d6862;
+var bgm_music_player;
+var ping_sound_player;
+var applause_sound_player;
+var player;
 var _0x58ae2e;
 var _0x6143b4;
 var _0xa25917;
 var _0x410bd3;
 var _0x15bb71;
-var _0x362008;
+var escape_key;
 var _0x30a308;
 var _0x5e4bf9 = {
   'left': false,
@@ -104,7 +104,7 @@ var _0x1d789a;
 var _0x3dd18a = 0;
 var _0x522f42 = null;
 function _0x42b56d(_0x40817a, _0x4f18f5) {
-  _0x360771.play();
+  ping_sound_player.play();
   _0x3dd18a += 1;
   if (!_0x522f42) {
     _0x522f42 = new Date();
@@ -154,29 +154,29 @@ export class MainGame extends Phaser.Scene {
     this.load.audio("applause", "./assets/applause.wav");
   }
   ["create"]() {
-    _0x362008 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+    escape_key = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
     this.input.addPointer(3);
-    _0x16cbd7 = this.sound.add("bkg_music", {
+    bgm_music_player = this.sound.add("bkg_music", {
       'volume': 0.2,
       'loop': true
     });
-    _0x16cbd7.play();
-    _0x360771 = this.sound.add("ping");
-    _0x28fb93 = this.sound.add("applause");
+    bgm_music_player.play();
+    ping_sound_player = this.sound.add("ping");
+    applause_sound_player = this.sound.add("applause");
     this.add.image(400, 300, "sky");
     this.add.text(10, 0, "Level: " + this.level_nbr.toString() + " / 3", {
       'font': "32px Arial",
       'fill': "#000000"
     });
-    [_0x410bd3, _0x3d6862, _0x6143b4, _0xa25917, _0x58ae2e] = makeMap(this.level_nbr, this, _0x410bd3, _0x3d6862, _0x58ae2e);
-    _0x3d6862.setBounce(0.1);
-    _0x3d6862.setCollideWorldBounds(true);
+    [_0x410bd3, player, _0x6143b4, _0xa25917, _0x58ae2e] = makeMap(this.level_nbr, this, _0x410bd3, _0x3d6862, _0x58ae2e);
+    player.setBounce(0.1);
+    player.setCollideWorldBounds(true);
     _0x58ae2e.setImmovable(true);
     _0x30a308 = false;
     _0x522f42 = null;
     _0x15bb71 = this.input.keyboard.createCursorKeys();
-    this.physics.add.collider(_0x3d6862, _0x410bd3, _0x42b56d, null, this);
-    this.physics.add.collider(_0x3d6862, _0x58ae2e, _0x16c2a5, null, this);
+    this.physics.add.collider(player, _0x410bd3, _0x42b56d, null, this);
+    this.physics.add.collider(player, _0x58ae2e, _0x16c2a5, null, this);
     _0x10fd7 = this.add.rectangle(0, 0, 450, 1200, "#000000", 0).setInteractive();
     _0x4505af = this.add.rectangle(450, 0, 250, 600, "#000000", 0).setInteractive();
     _0x4b7661 = this.add.rectangle(450, 600, 250, 600, "#000000", 0).setInteractive();
@@ -222,25 +222,25 @@ export class MainGame extends Phaser.Scene {
   }
   ["update"]() {
     const _0x3dad2d = this.input.activePointer;
-    if (Math.hypot(_0x6143b4 - _0x3d6862.x, _0xa25917 - _0x3d6862.y) > 50) {
+    if (Math.hypot(_0x6143b4 - player.x, _0xa25917 - _0x3d6862.y) > 50) {
       if (!_0x522f42) {
         _0x522f42 = new Date();
       }
     }
     if (_0x15bb71.right.isDown || false && _0x3dad2d.isDown && Phaser.Geom.Rectangle.Contains(_0x1d789a, _0x3dad2d.x, _0x3dad2d.y) || false) {
-      _0x3d6862.setVelocityX(225);
+      player.setVelocityX(225);
     } else {
-      _0x3d6862.setVelocityX(-225);
+      player.setVelocityX(-225);
     }
     if (_0x15bb71.up.isDown || false && _0x3dad2d.isDown && Phaser.Geom.Rectangle.Contains(_0x4505af, _0x3dad2d.x, _0x3dad2d.y) || false) {
-      _0x3d6862.setVelocityY(-225);
+      player.setVelocityY(-225);
     } else {
-      _0x3d6862.setVelocityY(225);
+      player.setVelocityY(225);
     }
     if (_0x30a308) {
-      _0x16cbd7.stop();
+      bgm_music_player.stop();
       if (this.level_nbr == 3) {
-        _0x28fb93.play();
+        applause_sound_player.play();
         this.scene.start("game_over", {
           'score': 0x0,
           'time': 0x0
@@ -251,8 +251,8 @@ export class MainGame extends Phaser.Scene {
         });
       }
     }
-    if (_0x362008.isDown) {
-      _0x16cbd7.stop();
+    if (escape_key.isDown) {
+      bgm_music_player.stop();
       this.scene.start("main_menu");
     }
   }

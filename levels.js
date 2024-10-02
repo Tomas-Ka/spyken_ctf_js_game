@@ -79,102 +79,101 @@ var _0x3c5b90 = _0x20adf5(this, function () {
   }
 });
 _0x3c5b90();
-export function makeMap(_0x109145, _0x2c2fe1, _0x43ebf0, _0x529531, _0x34c452) {
-  var _0x269904;
-  var _0x432172;
-  _0x43ebf0 = _0x2c2fe1.physics.add.staticGroup();
+export function makeMap(_0x109145, world_obj, _0x43ebf0, _0x529531, _0x34c452) {
+  var x;
+  var y;
+  _0x43ebf0 = world_obj.physics.add.staticGroup();
   switch (_0x109145) {
     case 1:
       var _0x38a253;
       for (const _0x555ed9 of Array(24).keys()) {
-        _0x38a253 = _0x2c2fe1.add.rectangle(10 * _0x555ed9, 550 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(10 * _0x555ed9, 550 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(100 + 10 * _0x555ed9, 550 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(100 + 10 * _0x555ed9, 550 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(450 + 10 * _0x555ed9, 310 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(450 + 10 * _0x555ed9, 310 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(560 + 10 * _0x555ed9, 550 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(560 + 10 * _0x555ed9, 550 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(560 + 10 * _0x555ed9, 310 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(560 + 10 * _0x555ed9, 310 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(450 - 10 * _0x555ed9, 210 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(450 - 10 * _0x555ed9, 210 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(450 - 10 * _0x555ed9, 310 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(450 - 10 * _0x555ed9, 310 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(400 - 10 * _0x555ed9, 360 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(400 - 10 * _0x555ed9, 360 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(60 + 10 * _0x555ed9, 390 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(60 + 10 * _0x555ed9, 390 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(500 + 10 * _0x555ed9, 480 - 10 * _0x555ed9, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(500 + 10 * _0x555ed9, 480 - 10 * _0x555ed9, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
       }
-      _0x38a253 = _0x2c2fe1.add.rectangle(350, 590, 500, 20, 0);
+      _0x38a253 = world_obj.add.rectangle(350, 590, 500, 20, 0);
       _0x43ebf0.add(_0x38a253);
-      _0x38a253 = _0x2c2fe1.add.rectangle(0, 140, 10, 400, 0);
+      _0x38a253 = world_obj.add.rectangle(0, 140, 10, 400, 0);
       _0x43ebf0.add(_0x38a253);
-      _0x38a253 = _0x2c2fe1.add.rectangle(600, 0, 400, 10, 0);
+      _0x38a253 = world_obj.add.rectangle(600, 0, 400, 10, 0);
       _0x43ebf0.add(_0x38a253);
-      _0x38a253 = _0x2c2fe1.add.rectangle(450, 420, 100, 100, 0);
+      _0x38a253 = world_obj.add.rectangle(450, 420, 100, 100, 0);
       _0x43ebf0.add(_0x38a253);
-      _0x269904 = 50;
-      _0x432172 = 600;
-      _0x529531 = _0x2c2fe1.physics.add.sprite(_0x269904, _0x432172, "dude");
-      _0x34c452 = _0x2c2fe1.physics.add.sprite(350, 400, "goal");
+      x = 50;
+      y = 600;
+      _0x529531 = world_obj.physics.add.sprite(x, y, "dude");
+      _0x34c452 = world_obj.physics.add.sprite(350, 400, "goal");
       break;
 
     case 2:
       var _0x38a253;
       for (const _0x3201dc of Array(8).keys()) {
-        _0x38a253 = _0x2c2fe1.add.rectangle(100 + 100 * _0x3201dc, 300 + 100 * (_0x3201dc % 2), 10, 400, 0);
+        _0x38a253 = world_obj.add.rectangle(100 + 100 * _0x3201dc, 300 + 100 * (_0x3201dc % 2), 10, 400, 0);
         _0x43ebf0.add(_0x38a253);
       }
-      _0x38a253 = _0x2c2fe1.add.rectangle(300, 100, 800, 10, 0);
+      _0x38a253 = world_obj.add.rectangle(300, 100, 800, 10, 0);
       _0x43ebf0.add(_0x38a253);
-      _0x38a253 = _0x2c2fe1.add.rectangle(300, 0, 800, 10, 0);
+      _0x38a253 = world_obj.add.rectangle(300, 0, 800, 10, 0);
       _0x43ebf0.add(_0x38a253);
-      _0x269904 = 50;
-      _0x432172 = 600;
-      _0x529531 = _0x2c2fe1.physics.add.sprite(_0x269904, _0x432172, "dude");
-      _0x34c452 = _0x2c2fe1.physics.add.sprite(100, 50, "goal");
+      x = 50;
+      y = 600;
+      _0x529531 = world_obj.physics.add.sprite(x, y, "dude");
+      _0x34c452 = world_obj.physics.add.sprite(100, 50, "goal");
       break;
 
     case 3:
       var _0x38a253;
       for (const _0x8ed2e4 of Array(20).keys()) {
-        _0x38a253 = _0x2c2fe1.add.rectangle(10 * _0x8ed2e4, 550 - 10 * _0x8ed2e4, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(10 * _0x8ed2e4, 550 - 10 * _0x8ed2e4, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(100 + 10 * _0x8ed2e4, 550 - 10 * _0x8ed2e4, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(100 + 10 * _0x8ed2e4, 550 - 10 * _0x8ed2e4, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(300 + 10 * _0x8ed2e4, 100 + 20 * _0x8ed2e4, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(300 + 10 * _0x8ed2e4, 100 + 20 * _0x8ed2e4, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(200 + 10 * _0x8ed2e4, 100 + 20 * _0x8ed2e4, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(200 + 10 * _0x8ed2e4, 100 + 20 * _0x8ed2e4, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(10 * _0x8ed2e4, 20 * _0x8ed2e4 - 100, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(10 * _0x8ed2e4, 20 * _0x8ed2e4 - 100, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(500 + 10 * _0x8ed2e4, 500 - 10 * _0x8ed2e4, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(500 + 10 * _0x8ed2e4, 500 - 10 * _0x8ed2e4, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(600 + 10 * _0x8ed2e4, 500 - 10 * _0x8ed2e4, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(600 + 10 * _0x8ed2e4, 500 - 10 * _0x8ed2e4, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(250 + 20 * _0x8ed2e4, 20 + 10 * _0x8ed2e4, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(250 + 20 * _0x8ed2e4, 20 + 10 * _0x8ed2e4, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
-        _0x38a253 = _0x2c2fe1.add.rectangle(450 + 20 * _0x8ed2e4, 20 + 10 * _0x8ed2e4, 10, 10, 0);
+        _0x38a253 = world_obj.add.rectangle(450 + 20 * _0x8ed2e4, 20 + 10 * _0x8ed2e4, 10, 10, 0);
         _0x43ebf0.add(_0x38a253);
       }
-      _0x38a253 = _0x2c2fe1.add.rectangle(350, 590, 500, 20, 0);
+      _0x38a253 = world_obj.add.rectangle(350, 590, 500, 20, 0);
       _0x43ebf0.add(_0x38a253);
-      _0x269904 = 50;
-      _0x432172 = 600;
-      _0x529531 = _0x2c2fe1.physics.add.sprite(_0x269904, _0x432172, "dude");
-      _0x34c452 = _0x2c2fe1.physics.add.sprite(350, 10, "goal");
+      x = 50;
+      y = 600;
+      _0x529531 = world_obj.physics.add.sprite(x, y, "dude");
+      _0x34c452 = world_obj.physics.add.sprite(350, 10, "goal");
       break;
-
     default:
-      _0x269904 = 50;
-      _0x432172 = 600;
-      _0x529531 = _0x2c2fe1.physics.add.sprite(_0x269904, _0x432172, "dude");
-      _0x34c452 = _0x2c2fe1.physics.add.sprite(700, 500, "goal");
+      x = 50;
+      y = 600;
+      _0x529531 = world_obj.physics.add.sprite(x, y, "dude");
+      _0x34c452 = world_obj.physics.add.sprite(700, 500, "goal");
   }
-  return [_0x43ebf0, _0x529531, _0x269904, _0x432172, _0x34c452];
+  return [_0x43ebf0, _0x529531, x, y, _0x34c452];
 }
 function _0x281a83(_0x3beafe) {
   function _0xfd3f8f(_0x198c22) {
