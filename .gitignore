@@ -1,0 +1,5 @@
+# Hide the files linked into firefox from git
+*_obf.js
+
+# I screwed up the naming on this one and can't be bothered to fix it
+*_obf2.js

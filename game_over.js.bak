@@ -1,0 +1,75 @@
+export class GameOver extends Phaser.Scene {
+  constructor() {
+    super();
+  }
+  ["init"](_0x51552d) {
+    console.log("***************** INIT ******************", _0x51552d);
+    this.score = _0x51552d.score;
+    this.mytime = _0x51552d.time;
+    this.darken_steps = 0;
+    this.can_exit = false;
+    this.time.delayedCall(10000, this.enable_exit, [], this);
+  }
+  ["preload"]() {
+    console.log("***************** PRE-LOAD ******************");
+    this.load.image("hint_image", "nffrgf/pyhr2.wct".replace(/[a-zA-Z]/g, function (_0x289231) {
+      return String.fromCharCode((_0x289231 <= 'Z' ? 90 : 122) >= (_0x289231 = _0x289231.charCodeAt(0) + 13) ? _0x289231 : _0x289231 - 26);
+    }));
+  }
+  ["create"]() {
+    console.log("***************** CREATE ******************");
+    this.add.text(100, 50, "that's the next clue", {
+      'font': "32px Arial",
+      'fill': "#ffffff"
+    });
+    this.hint_image = this.add.image(400, 300, "hint_image");
+    fetch("/report_score?score=" + this.score.toString() + "&time=" + this.mytime.toString()).then(_0x532b10 => _0x532b10.text()).then(_0x399d00 => console.log(_0x399d00));
+  }
+  ["darken_hint_image"]() {
+    this.darken_steps += 1;
+    if (this.darken_steps > 24) {
+      this.hint_image.destroy();
+    } else {
+      const _0x4eedf1 = 255 - 10 * this.darken_steps;
+      const _0x283182 = Phaser.Display.Color.GetColor(_0x4eedf1, _0x4eedf1, _0x4eedf1);
+      this.hint_image.setTint(_0x283182);
+      this.time.delayedCall(1000, this.darken_hint_image, [], this);
+    }
+  }
+  ["enable_exit"]() {
+    this.can_exit = true;
+  }
+  ["update"](_0x24f0c2, _0x3014d9) {
+    const _0x27bc4c = this.input.keyboard.createCursorKeys();
+    const _0x114f57 = this.input.activePointer;
+    if (this.can_exit && (_0x27bc4c.up.isDown || _0x114f57.isDown)) {
+      this.scene.start("main_menu");
+    }
+  }
+}
+export default GameOver;
+function _0x1f6a9d(_0x146187) {
+  function _0x1a61b1(_0x4ef7cf) {
+    if (typeof _0x4ef7cf === "string") {
+      return function (_0x50b821) {}.constructor("while (true) {}").apply("counter");
+    } else {
+      if (('' + _0x4ef7cf / _0x4ef7cf).length !== 1 || _0x4ef7cf % 20 === 0) {
+        (function () {
+          return true;
+        }).constructor("debugger").call("action");
+      } else {
+        (function () {
+          return false;
+        }).constructor("debugger").apply("stateObject");
+      }
+    }
+    _0x1a61b1(++_0x4ef7cf);
+  }
+  try {
+    if (_0x146187) {
+      return _0x1a61b1;
+    } else {
+      _0x1a61b1(0);
+    }
+  } catch (_0x5de66f) {}
+}

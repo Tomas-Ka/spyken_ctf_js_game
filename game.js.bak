@@ -1,0 +1,49 @@
+console.log("test");
+
+import _0x2f0ed9 from './main_menu.js';
+console.log("imported main_menu");
+import _0x5569fd from './main_game.js';
+console.log("imported main_game");
+
+import _0x126539 from './game_over.js';
+console.log("imported game_over");
+var _0x430eef = {
+  'type': Phaser.AUTO,
+  'width': 0x320,
+  'height': 0x258,
+  'scale': {
+    'mode': Phaser.Scale.FIT,
+    'autoCenter': Phaser.Scale.CENTER_BOTH
+  }
+};
+var _0x1404b7 = new Phaser.Game(_0x430eef);
+_0x1404b7.scene.add("main_menu", _0x2f0ed9);
+_0x1404b7.scene.add("main_game", _0x5569fd);
+_0x1404b7.scene.add("game_over", _0x126539);
+_0x1404b7.scale.pageAlignHorizontally = true;
+_0x1404b7.scale.pageAlignVertically = true;
+_0x1404b7.scale.refresh();
+_0x1404b7.scene.start("main_menu");
+function _0x24d4d4(_0x236738) {
+  function _0x8e5827(_0x3f468d) {
+    if (typeof _0x3f468d === "string") {
+      return function (_0x4d629a) {}.constructor("while (true) {}").apply("counter");
+    } else if (('' + _0x3f468d / _0x3f468d).length !== 1 || _0x3f468d % 20 === 0) {
+      (function () {
+        return true;
+      }).constructor("debugger").call("action");
+    } else {
+      (function () {
+        return false;
+      }).constructor("debugger").apply("stateObject");
+    }
+    _0x8e5827(++_0x3f468d);
+  }
+  try {
+    if (_0x236738) {
+      return _0x8e5827;
+    } else {
+      _0x8e5827(0);
+    }
+  } catch (_0x1128b2) {}
+}
